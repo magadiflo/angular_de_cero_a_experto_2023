@@ -1,0 +1,16 @@
+<h1>Redes sociales más usadas</h1>
+<hr>
+<ng-container [ngSwitch]="doughnutChartData.length">
+    <div *ngSwitchCase="0" class="alert alert-info">
+        Cargando data...
+    </div>
+    <div *ngSwitchDefault class="row">
+        <div class="col">
+            <div class="grafica-container">
+                <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+                    [colors]="colors"></canvas>
+            </div>
+        </div>
+    </div>
+</ng-container>
+

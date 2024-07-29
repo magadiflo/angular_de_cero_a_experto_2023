@@ -1,0 +1,32 @@
+<div class="container container-hero">
+  <h1 class="container-hero__title">Spiderman</h1>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <dl>
+            <dt>Nombre:</dt>
+            <dd>{{ name }}</dd>
+            <dt>Edad:</dt>
+            <dd>{{ age }}</dd>
+            <dt>Método:</dt>
+            <dd>{{ getHeroDescription() }}</dd>
+            <dt>Capitalizado:</dt>
+            <dd>{{ capitalizedName }}</dd>
+          </dl>
+          <div class="container-hero__container-buttons">
+            <button type="button" *ngIf="isActiveName" (click)="changeHero()" class="btn btn-outline-primary">
+              Cambiar nombre
+            </button>
+            <button type="button" *ngIf="age !== 34" (click)="changeAge()" class="btn btn-outline-success">
+              Cambiar edad
+            </button>
+            <button type="button" (click)="resetValues()" class="btn btn-warning">
+              Resetear
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

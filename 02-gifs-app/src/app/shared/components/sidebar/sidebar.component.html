@@ -1,0 +1,8 @@
+<div class="bg-dar border-right p-3 sidebar-container">
+  <h3 class="mb-3 pb-3 border-bottom text-center">Gifs App</h3>
+  <aside class="list-group list-reset">
+    <button type="button" (click)="searchTag(tag)" *ngFor="let tag of tagHistory;" class="list-group-item list-group-item-action">
+      {{ tag | titlecase }}
+    </button>
+  </aside>
+</div>

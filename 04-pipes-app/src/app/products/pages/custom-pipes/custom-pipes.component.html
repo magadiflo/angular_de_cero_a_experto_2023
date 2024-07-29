@@ -1,0 +1,98 @@
+<p-panel header="Custom Pipes tomados de la página de medium" class="p-1">
+  <a href="https://blog.bitsrc.io/mastering-custom-pipes-in-angular-31-real-world-examples-2023-c7ce8ec7faae">
+    Mastering Custom Pipes in Angular: 31 Real-world Examples (2023)
+  </a>
+</p-panel>
+<div class="grid">
+  <div class="col-12 sm:col-6 md:col-4">
+    <p-card header="1. Uppercase First Pipe">
+      {{ phrase | uppercaseFirst }}
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-6 md:col-4">
+    <p-card header="2. Reverse String Pipe">
+      {{ course | reverseString }}
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-6 md:col-4">
+    <p-card header="3. Filter Array Pipe">
+      <p-table [value]="products | filterArray:'category':'Electronics'">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <tr>
+            <td>{{ product.code }}</td>
+            <td>{{ product.name }}</td>
+            <td><span class="pi {{ product.category | categoryIcon }}"></span> {{ product.category }}</td>
+            <td>{{ product.quantity }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-card>
+  </div>
+</div>
+<div class="grid">
+  <div class="col-12 sm:col-6 md:col-4">
+    <p-card header="4. Truncate Text Pipe">
+      {{ text | truncateText:20 }}
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-6 md:col-4">
+    <p-card header="5. Sort Array Pipe">
+      <p-table [value]="products | filterArray:'category':'Electronics' | sortArray:'quantity':'desc'">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <tr>
+            <td>{{ product.code }}</td>
+            <td>{{ product.name }}</td>
+            <td><span class="pi {{ product.category | categoryIcon }}"></span> {{ product.category }}</td>
+            <td>{{ product.quantity }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-6 md:col-4">
+    <p-card header="6. Currency Convert Pipe">
+      {{ salary | currencyConvert:1.20}}
+    </p-card>
+  </div>
+</div>
+<div class="grid">
+  <div class="col-12 sm:col-6 md:col-4">
+    <p-card header="7. Phone Number Formatter Pipe">
+      <div>{{ phone | phoneNumberFormatter }}</div>
+      <div>{{ '943859658' | phoneNumberFormatter }}</div>
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-6 md:col-4">
+    <p-card header="8. File Size Pipe">
+      {{ fileSize | fileSize }}
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-6 md:col-4">
+    <p-card header="9. Percent Change Pipe">
+      {{ currentValue | percentChange:100 }}
+      <br>
+      {{ 25 | percentChange:50 }}
+    </p-card>
+  </div>
+  <div class="col-12 sm:col-6 md:col-4">
+    <p-card header="10. Strip HTML Tags Pipe">
+      {{ textWithHtml | stripHtmlTags }}
+    </p-card>
+  </div>
+</div>

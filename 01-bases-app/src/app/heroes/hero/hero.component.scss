@@ -1,0 +1,17 @@
+.container-hero {
+  &__title {
+    text-align: center;
+    color: #125dfe
+  }
+
+  &__container-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-body {
+    dd {
+      background-color: bisque;
+    }
+  }
+}

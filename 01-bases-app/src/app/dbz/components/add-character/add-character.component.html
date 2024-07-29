@@ -1,0 +1,17 @@
+<h4>Agregar personaje</h4>
+<form autocomplete="off" (ngSubmit)="emitCharacter()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="character.name" autofocus>
+  </div>
+  <div class="mb-3">
+    <label for="power" class="form-label">Poder</label>
+    <input type="number" class="form-control" id="power" name="power" [(ngModel)]="character.power">
+  </div>
+  <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+<div class="card mt-3">
+  <div class="card-body">
+    <pre>{{ character | json }}</pre>
+  </div>
+</div>

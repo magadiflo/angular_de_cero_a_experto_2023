@@ -1,0 +1,16 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'percentChange'
+})
+export class PercentChangePipe implements PipeTransform {
+
+  transform(currentValue: number, previousValue: number): string {
+    if (isNaN(currentValue) || isNaN(previousValue)) return '';
+
+    const change = ((currentValue - previousValue) / Math.abs(previousValue)) * 100;
+    const sign = change >= 0 ? '+' : '';
+    return `${sign}${change.toFixed(2)}%`;
+  }
+
+}
