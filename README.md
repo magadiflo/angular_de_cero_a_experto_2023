@@ -1,0 +1,3 @@
+# Angular desde cero a experto - Edición 2023
+
+Los proyectos aquí mostrados corresponden al curso tomado en **Udemy de Fernando Herrera** del año **2023**. En casi todos los proyectos se usan `Módulos` para agrupar componentes, mientras que casi al finalizar algunos de estos proyectos se empieza a usar las características de Angular moderno como los `Standalone Componets`, `Signals`, `Angular 17`, etc.
